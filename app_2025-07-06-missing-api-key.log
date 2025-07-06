@@ -1,0 +1,14 @@
+2025-07-06 13:33:46 - INFO - Initializing services...
+2025-07-06 13:33:46 - INFO - [MCP] MCP Server initialization started | Context: {"version": "2.0.0", "debug_mode": true}
+2025-07-06 13:33:46 - ERROR - GEMINI_API_KEY not found in environment variables
+2025-07-06 13:33:46 - ERROR - [MCP] Gemini API key missing | Context: {"config_issue": "GEMINI_API_KEY not configured", "impact": "Chat functionality disabled"}
+Traceback (most recent call last):
+  File "D:\My Files\Training\Binar Academy\assigments\assigment-6\mcp-weather-server\mcp_debug_server.py", line 13, in <module>
+    from src.app import app
+  File "D:\My Files\Training\Binar Academy\assigments\assigment-6\mcp-weather-server\src\__init__.py", line 3, in <module>
+    from .app import create_app, app
+  File "D:\My Files\Training\Binar Academy\assigments\assigment-6\mcp-weather-server\src\app.py", line 99, in <module>
+    app = create_app()
+  File "D:\My Files\Training\Binar Academy\assigments\assigment-6\mcp-weather-server\src\app.py", line 43, in create_app
+    raise ValueError("GEMINI_API_KEY is required")
+ValueError: GEMINI_API_KEY is required
