@@ -1,0 +1,143 @@
+{
+  "timestamp": "2025-07-06T14:05:17.025794",
+  "base_url": "http://localhost:8000",
+  "total_tests": 10,
+  "results": [
+    {
+      "timestamp": "2025-07-06T14:05:15.327649",
+      "test": "Server Health Check",
+      "status": "PASS",
+      "response": {
+        "status": "healthy",
+        "timestamp": "2025-07-06T14:05:15.324975"
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:16.212255",
+      "test": "Server Status",
+      "status": "PASS",
+      "response": {
+        "system": "MCP Weather Server",
+        "status": "healthy",
+        "timestamp": "2025-07-06T14:05:16.209562",
+        "services": {
+          "gemini_service": {
+            "name": "GeminiService",
+            "status": "active",
+            "initialized_at": "2025-07-06T13:30:47.850251",
+            "uptime_seconds": 2068.359326,
+            "healthy": true,
+            "test_response_length": 39,
+            "conversation_count": 1
+          },
+          "weather_service": {
+            "name": "WeatherService",
+            "status": "active",
+            "initialized_at": "2025-07-06T13:30:47.851760",
+            "uptime_seconds": 2068.357835,
+            "healthy": false,
+            "test_city": "London",
+            "last_check": "2025-07-06T14:05:16.209552"
+          }
+        },
+        "environment": {
+          "gemini_api_configured": true,
+          "weather_api_configured": true,
+          "log_level": "DEBUG",
+          "environment": "development"
+        }
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:16.214488",
+      "test": "Weather API - Missing Key",
+      "status": "UNEXPECTED",
+      "response": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "city"
+            ],
+            "msg": "Field required",
+            "input": {
+              "location": "Jakarta"
+            }
+          }
+        ]
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:17.006132",
+      "test": "Chat API - Missing Key",
+      "status": "UNEXPECTED",
+      "response": {
+        "success": true,
+        "content": "Assistant: Hello again!\n",
+        "timestamp": "2025-07-06T14:05:17.004256",
+        "metadata": {
+          "conversation_count": 2
+        }
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:17.012552",
+      "test": "404 Test - /invalid/endpoint",
+      "status": "PASS",
+      "response": {
+        "status": 404
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:17.014987",
+      "test": "404 Test - /weather/invalid",
+      "status": "PASS",
+      "response": {
+        "status": 404
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:17.016337",
+      "test": "404 Test - /chat/invalid",
+      "status": "PASS",
+      "response": {
+        "status": 404
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:17.017800",
+      "test": "Weather - Invalid JSON",
+      "status": "PASS",
+      "response": {
+        "status": 422
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:17.020901",
+      "test": "Chat - Missing Message",
+      "status": "PASS",
+      "response": {
+        "status": 422
+      },
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-06T14:05:17.022942",
+      "test": "Weather - Missing Location",
+      "status": "PASS",
+      "response": {
+        "status": 422
+      },
+      "error": null
+    }
+  ]
+}
